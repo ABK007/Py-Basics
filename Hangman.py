@@ -14,3 +14,19 @@ def generate_blanks(word):
     for i in range(len(word)):
         blanks += "_  "
     return blanks
+
+def ask_letter():
+    """ Asks the user input to type a letter and returns it as output """
+    letter = input ("Guess a letter: ")
+    return letter
+
+
+
+
+guess_word = random_word_selection(word_list)
+
+blanks = generate_blanks(guess_word)
+
+print(blanks)
+
+guessed_letter = ask_letter
