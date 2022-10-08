@@ -82,12 +82,13 @@ stages = ['''
 =========
 ''']
 
+Chances_left = 6
+
 while True:
     print(blanks)
     guessed_letter = ask_letter() # Stores letter typed by user
 
     if guessed_letter in guess_word:
-        print("Right")
 # Below for loop iterates through guess_word and if letter is in the word, it replaces
 # the blank in blanks list with the letter
         for index in range(len(guess_word)):
@@ -95,7 +96,13 @@ while True:
                 blanks[index] = guessed_letter
 
     else:
-        print("Wrong")
+# This piece of code decrease the number of chances in case of wrong letters
+# And prints the string from stages list according to the chances left
+        Chances_left = Chances_left - 1
+        print(stages[Chances_left])
+        if Chances_left == 0 : # Exits while loop when chances left are zero
+            break
+
 
 #Following code checks if there is no blank left in blanks list, then print message
 #and  exit the while loop using break keyword.
