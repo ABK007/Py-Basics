@@ -10,14 +10,14 @@ def random_word_selection(list):
 
 def generate_blanks(word):
     """ Returns blanks according to the number of letters in a word """
-    blanks = ""
+    blanks = []
     for i in range(len(word)):
-        blanks += "_  "
+        blanks += "_"
     return blanks
 
 def ask_letter():
     """ Asks the user input to type a letter and returns it as output """
-    letter = input ("Guess a letter: ")
+    letter = input("Guess a letter: ")
     return letter
 
 
@@ -29,7 +29,9 @@ guessed_letter = ""
 while True:
     print(blanks)
     guessed_letter = ask_letter() # Stores letter typed by user
+
     if guessed_letter in guess_word:
         print("Right")
+
     else:
         print("Wrong")
