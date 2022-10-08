@@ -30,8 +30,11 @@ blanks = generate_blanks(guess_word) #Saves blanks in the form of list according
 Chances_left = 6 # Number of chances for player
 
 while True:
-    print(blanks)
+    print(blanks) # Displays blanks
     guessed_letter = ask_letter() # Stores letter typed by user
+
+    if guessed_letter in blanks:
+        print("You have already guessed the letter: {}".format(guessed_letter))
 
     if guessed_letter in guess_word:
 # Below for loop iterates through guess_word and if letter is in the word, it replaces
