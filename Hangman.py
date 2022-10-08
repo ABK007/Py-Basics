@@ -21,12 +21,15 @@ def ask_letter():
     return letter
 
 
+guess_word = random_word_selection(word_list) # Saves the randomly selected word
 
+blanks = generate_blanks(guess_word) #Saves blanks string according to the length of word
 
-guess_word = random_word_selection(word_list)
-
-blanks = generate_blanks(guess_word)
-
-print(blanks)
-
-guessed_letter = ask_letter
+guessed_letter = ""
+while True:
+    print(blanks)
+    guessed_letter = ask_letter() # Stores letter typed by user
+    if guessed_letter in guess_word:
+        print("Right")
+    else:
+        print("Wrong")
