@@ -1,6 +1,7 @@
 import random #imported random library
 from stages import stages
-word_list = ["Hello", "good", "delicious"] #list of words for passing as argument in random_word_selection function
+from stages import logo # Imported Hangman logo
+from word_list import word_list #list of words for passing as argument in random_word_selection function
 
 def random_word_selection(list):
     """ Returns a word randomly selected from the words list passed as argument for guessing """
@@ -20,7 +21,7 @@ def ask_letter():
     letter = input("Guess a letter: ")
     return letter
 
-
+print(logo) #Prints hangman logo at the start of game
 guess_word = random_word_selection(word_list) # Saves the randomly selected word
 
 blanks = generate_blanks(guess_word) #Saves blanks in the form of list according to the length of word
