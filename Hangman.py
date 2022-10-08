@@ -23,7 +23,7 @@ def ask_letter():
 
 guess_word = random_word_selection(word_list) # Saves the randomly selected word
 
-blanks = generate_blanks(guess_word) #Saves blanks string according to the length of word
+blanks = generate_blanks(guess_word) #Saves blanks in the form of list according to the length of word
 
 while True:
     print(blanks)
@@ -31,9 +31,17 @@ while True:
 
     if guessed_letter in guess_word:
         print("Right")
+# Below for loop iterates through guess_word and if letter is in the word, it replaces
+# the blank in blanks list with the letter
         for index in range(len(guess_word)):
             if guessed_letter == guess_word[index]:
                 blanks[index] = guessed_letter
 
     else:
         print("Wrong")
+
+#Following code checks if there is no blank left in blanks list, then print message
+#and  exit the while loop using break keyword.
+    if "_" not in blanks:
+        print("You have guessd the word correctly. You won.")
+        break
