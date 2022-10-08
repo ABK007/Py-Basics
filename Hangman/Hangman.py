@@ -1,5 +1,5 @@
 import random #imported random library
-
+from stages import stages
 word_list = ["Hello", "good", "delicious"] #list of words for passing as argument in random_word_selection function
 
 def random_word_selection(list):
@@ -25,64 +25,8 @@ guess_word = random_word_selection(word_list) # Saves the randomly selected word
 
 blanks = generate_blanks(guess_word) #Saves blanks in the form of list according to the length of word
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
 
-Chances_left = 6
+Chances_left = 6 # Number of chances for player
 
 while True:
     print(blanks)
