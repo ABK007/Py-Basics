@@ -47,6 +47,7 @@ while True:
 # This piece of code decrease the number of chances in case of wrong letters
 # And prints the string from stages list according to the chances left
         Chances_left = Chances_left - 1
+        print("You have guessed a letter not in the word. You lose a chance.")
         print(stages[Chances_left])
         if Chances_left == 0 : # Exits while loop when chances left are zero
             break
