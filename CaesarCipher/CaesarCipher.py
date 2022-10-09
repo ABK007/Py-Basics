@@ -10,6 +10,8 @@ def encrypt(text, shift):
     for letter in text:
         index = alphabet.index(letter)
         shift_number = index + shift
+        if shift_number >= 25:
+            shift_number = shift_number - 26
         encrypt_letter = alphabet[shift_number]
         encrypted_text += encrypt_letter
     return encrypted_text
