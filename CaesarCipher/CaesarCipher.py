@@ -15,6 +15,9 @@ def caesarCipher():
         encodeOrDecode = input("Type 'encode' to encrypt and type 'decode' to decrypt: \n").lower()
         input_text = input("Input your text here: \n").lower()
         shift = int(input("Type the shift number: \n"))
+        
+        if shift > 26:
+            shift = shift % 26
     
     
 
@@ -35,7 +38,7 @@ def caesarCipher():
                 else:
                     cipher += letter
                 
-            print(cipher)
+            print(f"your encoded message is:\n {cipher}")
     
         elif encodeOrDecode == "decode":
             for letter in input_text:
@@ -53,7 +56,8 @@ def caesarCipher():
                 else:
                     cipher += letter
      
-            print(cipher)
+            print(f"your decoded message is:\n {cipher}")
+
         playAgain = input("Do you want play again (yes/no): ").lower()
         
         if playAgain == "yes":
