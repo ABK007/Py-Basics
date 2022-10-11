@@ -27,7 +27,10 @@ def caesarCipher():
                 encrypt_letter = alphabet[shift_number]
                 cipher += encrypt_letter
             elif letter.isnumeric() == True:
-               cipher += letter 
+               cipher += letter
+            elif letter.isspace() == True:
+                cipher += letter
+                
         print(cipher)
     
     elif encodeOrDecode == "decode":
@@ -40,6 +43,8 @@ def caesarCipher():
                 encrypt_letter = alphabet[shift_number]
                 cipher += encrypt_letter
             elif letter.isnumeric() == True:
+                cipher += letter
+            elif letter.isspace() == True:
                 cipher += letter
         print(cipher)
             
