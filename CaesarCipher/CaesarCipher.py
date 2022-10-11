@@ -10,43 +10,57 @@ alphabet = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 def caesarCipher():
     print(logo)
-    encodeOrDecode = input("Type 'encode' to encrypt and type 'decode' to decrypt: \n").lower()
-    input_text = input("Input your text here: \n").lower()
-    shift = int(input("Type the shift number: \n"))
+    
+    while True:
+        encodeOrDecode = input("Type 'encode' to encrypt and type 'decode' to decrypt: \n").lower()
+        input_text = input("Input your text here: \n").lower()
+        shift = int(input("Type the shift number: \n"))
     
     
 
-    cipher = ""
-    if encodeOrDecode == "encode":
-        for letter in input_text:
-            if letter.isalpha() == True:
-                index = alphabet.index(letter)
-                shift_number = index + shift
-                if shift_number >= 25:
-                    shift_number = shift_number - 26
-                encrypt_letter = alphabet[shift_number]
-                cipher += encrypt_letter
-            elif letter.isnumeric() == True:
-               cipher += letter
-            elif letter.isspace() == True:
-                cipher += letter
+        cipher = ""
+        if encodeOrDecode == "encode":
+            for letter in input_text:
+                if letter.isalpha() == True:
+                    index = alphabet.index(letter)
+                    shift_number = index + shift
+                    if shift_number >= 25:
+                        shift_number = shift_number - 26
+                    encrypt_letter = alphabet[shift_number]
+                    cipher += encrypt_letter
+                elif letter.isnumeric() == True:
+                    cipher += letter
+                elif letter.isspace() == True:
+                    cipher += letter
+                else:
+                    cipher += letter
                 
-        print(cipher)
+            print(cipher)
     
-    elif encodeOrDecode == "decode":
-        for letter in input_text:
-            if letter.isalpha() == True:
-                index = alphabet.index(letter)
-                shift_number = index - shift
-                if shift_number <= -1:
-                    shift_number = shift_number + 26
-                encrypt_letter = alphabet[shift_number]
-                cipher += encrypt_letter
-            elif letter.isnumeric() == True:
-                cipher += letter
-            elif letter.isspace() == True:
-                cipher += letter
-        print(cipher)
+        elif encodeOrDecode == "decode":
+            for letter in input_text:
+                if letter.isalpha() == True:
+                    index = alphabet.index(letter)
+                    shift_number = index - shift
+                    if shift_number <= -1:
+                        shift_number = shift_number + 26
+                    encrypt_letter = alphabet[shift_number]
+                    cipher += encrypt_letter
+                elif letter.isnumeric() == True:
+                    cipher += letter
+                elif letter.isspace() == True:
+                    cipher += letter
+                else:
+                    cipher += letter
+     
+            print(cipher)
+        playAgain = input("Do you want play again (yes/no): ").lower()
+        
+        if playAgain == "yes":
+            pass
+        elif playAgain == "no":
+            break
+        
             
  
 
