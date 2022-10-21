@@ -1,4 +1,4 @@
-from os import system #import os library for using functionto clear console after each bidder
+from os import system #import os library for using function to clear console after each bidder
 from art import logo # Importing logo string from art.py file
 
 bidders = {}       
@@ -32,7 +32,7 @@ while True:
             if bidders[highest_bidder] == max_bid: # looking for the name of highest bidder
                 winner = highest_bidder
         
-        print(f"The winner is {winner} with bidding amount {max_bid}$ ") #prints winner message
+        print(f"The winner is {winner} with bidding amount ${max_bid}") #prints winner message
         
         break 
         
