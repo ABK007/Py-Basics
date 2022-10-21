@@ -17,12 +17,17 @@ def multiply(n1, n2):
 def divide(n1, n2):
     return n1 / n2
 
-def calculator ():
+def calculator (): #Defined the calculator function
     
-    print(logo)
+    print(logo) #prints calculator logo
 
-    operations = { "+": add, "-":subtract, "*":multiply, "/": divide }
+    # Created dictionary to with keys as operation symbols and functions as values
+    operations = { "+": add,
+                  "-":subtract,
+                  "*":multiply,
+                  "/": divide }
 
+    # Asking for first number
     num1 = float(input("What's the first number?: "))
 
 
@@ -31,12 +36,12 @@ def calculator ():
 
 
 
-    while True:
-        operation_symbol = input("Pick an operation from the lines above: ")
+    while True: # Created while loop to continuously execute the following code
+        operation_symbol = input("Pick an operation : ")
         num2 = float(input("What's the next number?: "))
 
         Calculation_function = operations[operation_symbol]
-        answer = Calculation_function(num1, num2)
+        answer = Calculation_function(num1, num2) # passing value to the function depending on the operation selected
 
         print(f"{num1} {operation_symbol} {num2} = {answer}")
 
@@ -47,7 +52,7 @@ def calculator ():
             num1 = answer
 
         elif resume == "n":
-            calculator()
+            calculator() #Added calculator function for recursion
 
 
 calculator()
