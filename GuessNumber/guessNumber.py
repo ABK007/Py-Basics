@@ -5,9 +5,11 @@ from logo import logo
 
 
 def generate_number():
+    """Returns a random number between 0 and 100"""
     return random.randint(0, 100)
 
 def select_difficulty(level_string):
+    """Returns number of chances depending on the user selects easy or hard option"""
     if level_string == "easy":
         return 10
     elif level_string == "hard":
